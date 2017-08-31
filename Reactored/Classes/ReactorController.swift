@@ -8,15 +8,16 @@
 
 import UIKit
 
-class ReactorController<R: Reactor>: UIViewController {
+public class ReactorController<R: Reactor>: UIViewController {
+    
     var reactor: R!
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reactor.setUp(view: view as! R.View)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         reactor.tearDown()
     }

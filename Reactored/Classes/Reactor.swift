@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol Reactor {
+public protocol Reactor {
     associatedtype View: ReactorView
     
     var store: ReactorStore<View.State> { get }

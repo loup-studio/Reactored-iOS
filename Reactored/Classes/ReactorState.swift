@@ -8,4 +8,4 @@
 
 import Foundation
 
-protocol ReactorState: Equatable { }
+public protocol ReactorState: Equatable { }

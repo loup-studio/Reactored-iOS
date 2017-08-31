@@ -9,10 +9,10 @@
 import Foundation
 import RxSwift
 
-class ReactorStore<State : ReactorState>: ObservableType {
-    typealias E = State
+public class ReactorStore<State : ReactorState>: ObservableType {
+    public typealias E = State
+    public typealias Mutation = (inout State) -> ()
     typealias Key = UInt
-    typealias Mutation = (inout State) -> ()
     
     private var nextKey: Key = 0
     private var observers: [Key: (Event<State>) -> ()] = [:]
@@ -23,7 +23,7 @@ class ReactorStore<State : ReactorState>: ObservableType {
         return _state!
     }
     
-    required init(default state: State) {
+    required public init(default state: State) {
         _state = state
         
         #if TRACE_RESOURCES

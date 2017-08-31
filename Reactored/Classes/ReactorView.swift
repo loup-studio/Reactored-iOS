@@ -9,19 +9,10 @@
 import UIKit
 import RxSwift
 
-protocol ReactorView {
+public protocol ReactorView {
     associatedtype Action
     associatedtype State: ReactorState
     
     func bind(state: State)
     func actions() -> Observable<Action>
 }
-
-//extension ReactorView {
-//    
-//    func bind(state: State, if isActive: Bool) {
-//        if isActive {
-//            bind(state: state)
-//        }
-//    }
-//}
