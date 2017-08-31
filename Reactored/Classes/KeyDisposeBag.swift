@@ -13,6 +13,8 @@ public final class KeyDisposeBag {
     
     private var disposables = [(String, Disposable)]()
     
+    public init() {}
+    
     deinit {
         dispose()
     }
