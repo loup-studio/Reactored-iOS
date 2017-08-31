@@ -10,7 +10,7 @@ import UIKit
 
 open class ReactorController<R: Reactor>: UIViewController {
     
-    var reactor: R!
+    public var reactor: R!
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

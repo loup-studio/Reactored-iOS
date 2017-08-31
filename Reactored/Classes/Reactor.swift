@@ -20,7 +20,7 @@ public protocol Reactor {
 
 extension Reactor {
     
-    func setUp(view: View) {
+    public func setUp(view: View) {
         Log.t("\(String(describing: type(of: self))): set up")
         
         store
@@ -37,7 +37,7 @@ extension Reactor {
             .disposed(by: disposeBag)
     }
     
-    func tearDown() {
+    public func tearDown() {
         Log.t("\(String(describing: type(of: self))): tear down")
         disposeBag.dispose()
     }

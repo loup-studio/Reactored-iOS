@@ -17,21 +17,21 @@ public final class KeyDisposeBag {
         dispose()
     }
     
-    func put(disposable: Disposable, key: String = "") {
+    public func put(disposable: Disposable, key: String = "") {
         if key != "" {
             dispose(by: key)
         }
         disposables.append((key, disposable))
     }
     
-    func dispose(by key: String) {
+    public func dispose(by key: String) {
         if let index = disposables.index(where: { $0.0 == key }) {
             disposables[index].1.dispose()
             disposables.remove(at: index)
         }
     }
     
-    func dispose() {
+    public func dispose() {
         guard !disposables.isEmpty else { return }
         disposables.forEach { $0.1.dispose() }
         disposables.removeAll(keepingCapacity: false)

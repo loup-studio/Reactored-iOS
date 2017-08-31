@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 extension Disposable {
-    func disposed(by bag: KeyDisposeBag, key: String = "") {
+    public func disposed(by bag: KeyDisposeBag, key: String = "") {
         bag.put(disposable: self, key: key)
     }
 }

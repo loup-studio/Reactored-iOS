@@ -19,7 +19,7 @@ public class ReactorStore<State : ReactorState>: ObservableType {
     private var _state: State!
     private var afterCommit: Mutation?
     
-    var state: State {
+    public var state: State {
         return _state!
     }
     
@@ -56,7 +56,7 @@ public class ReactorStore<State : ReactorState>: ObservableType {
         }
     }
     
-    func commit(silently: Bool = false, _ mutation: Mutation) {
+    public func commit(silently: Bool = false, _ mutation: Mutation) {
         Log.d("\(String(describing: type(of: self))): \(silently ? "commit silently" : "commit")")
         assertMainThread()
         var newState = _state!
@@ -75,7 +75,7 @@ public class ReactorStore<State : ReactorState>: ObservableType {
         }
     }
     
-    func afterCommit(_ mutation: @escaping Mutation) {
+    public func afterCommit(_ mutation: @escaping Mutation) {
         afterCommit = mutation
     }
     

@@ -9,11 +9,11 @@
 import Foundation
 
 public struct ReactorConfig {
-    enum Logging: Int {
+    public enum Logging: Int {
         case none = 0, debug, trace
     }
     
-    static var logging: Logging = .none
+    public static var logging: Logging = .none
     
     private init() {}
 }
