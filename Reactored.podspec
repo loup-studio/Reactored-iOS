@@ -19,6 +19,7 @@ Reactored iOS
 
   s.frameworks = 'UIKit'
   s.dependency 'RxSwift', '~> 4'
+  s.swift_versions = ['4.2']
 
   s.homepage         = 'https://github.com/loup-studio/Reactored-iOS'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
